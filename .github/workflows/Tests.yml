@@ -32,7 +32,8 @@ jobs:
       # Run Bruno CLI tests with Production environment and HTML reporting
       - name: Run Bruno Tests
         run: |
-          npx @usebruno/cli run --env Production --reporter-html ./reports/Results.html
+          cd Sample_Collection
+          npx @usebruno/cli run --env Production --reporter-html ../reports/Results.html
 
       # Upload the test report as an artifact
       - name: Upload Test Report
