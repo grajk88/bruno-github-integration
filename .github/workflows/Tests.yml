@@ -37,6 +37,7 @@ jobs:
 
       # Upload the test report as an artifact
       - name: Upload Test Report
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Bruno Test Results
@@ -44,4 +45,5 @@ jobs:
 
       # (Optional) Post-run: Summary output
       - name: Display Test Run Summary
+        if: always()
         run: echo "Bruno tests completed. HTML report is generated and uploaded as an artifact."
