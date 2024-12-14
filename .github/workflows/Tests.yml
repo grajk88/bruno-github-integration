@@ -1,0 +1,46 @@
+name: Run Bruno Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  bruno-test:
+    name: Run Bruno CLI Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Adjust Node version as needed
+
+      # Install Bruno CLI dependencies
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      # Run Bruno CLI tests with Production environment and HTML reporting
+      - name: Run Bruno Tests
+        run: |
+          npx @usebruno/cli run --env Production --reporter-html ./reports/Results.html
+
+      # Upload the test report as an artifact
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Bruno Test Results
+          path: ./reports/Results.html
+
+      # (Optional) Post-run: Summary output
+      - name: Display Test Run Summary
+        run: echo "Bruno tests completed. HTML report is generated and uploaded as an artifact."
