@@ -1,0 +1,20 @@
+meta {
+  name: Basic_Auth_Req
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{REQ_URL_HTTPBIN}}/hidden-basic-auth
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: admin
+  password: admin
+}
+
+assert {
+  res.status: eq 404
+}

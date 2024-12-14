@@ -1,0 +1,15 @@
+meta {
+  name: Bearer_Token_Req
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{REQ_URL_HTTPBIN}}/bearer
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: 12131m4k1n4k12m4
+}

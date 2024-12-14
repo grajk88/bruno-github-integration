@@ -1,0 +1,19 @@
+meta {
+  name: With_Variables_Req
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{REQ_URL_FAKE}}/CoverPhotos/books/covers/{{bookId}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  bookId: 20
+}
+
+docs {
+  This is a sample request with a variable defined and called in the Request URL
+}
