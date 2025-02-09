@@ -33,7 +33,7 @@ jobs:
       - name: Run Bruno Tests
         run: |
           cd collection
-          npx @usebruno/cli run --env Production --reporter-html ../reports/Results.html
+          npx @usebruno/cli run --env Production --reporter-html ./collection/reports/Results.html
 
       # Upload the test report as an artifact
       - name: Upload Test Report
