@@ -38,7 +38,7 @@ jobs:
       # Upload the test report as an artifact
       - name: Upload Test Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Bruno Test Results
           path: ./collections/reports/Results.html
