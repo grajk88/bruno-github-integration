@@ -10,5 +10,8 @@
   "description": "",
   "devDependencies": {
     "@usebruno/cli": "^1.36.3"
+  },
+  "dependencies": {
+    "bruno-tests": "file:"
   }
 }

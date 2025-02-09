@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Bruno Test Results
-          path: ./reports/Results.html
+          path: ./collections/reports/Results.html
 
       # (Optional) Post-run: Summary output
       - name: Display Test Run Summary
