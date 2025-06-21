@@ -30,6 +30,7 @@ jobs:
            REQ_URL_FAKE: ${{ secrets.REQ_URL_FAKE }}
 
         run: |
+          cd collection
           npx bru run --env "REQ_URL_HTTPBIN=${REQ_URL_HTTPBIN}" --env "REQ_URL_FAKE=${REQ_URL_FAKE}" --reporter-json ../collection/reports/results.json --reporter-html ../collection/reports/Results.html
         
       # Upload the test report as an artifact
