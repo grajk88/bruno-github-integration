@@ -29,6 +29,7 @@ jobs:
           REQ_URL_HTTPBIN: ${{ secrets.REQ_URL_HTTPBIN }}
           REQ_URL_FAKE: ${{ secrets.REQ_URL_FAKE }}
         run: |
+          cd collection
           mkdir -p ./collection/reports
           npx @usebruno/cli run ./collection \
             --env "REQ_URL_HTTPBIN=${REQ_URL_HTTPBIN}" \
