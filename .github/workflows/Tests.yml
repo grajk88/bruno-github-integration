@@ -33,8 +33,8 @@ jobs:
           mkdir -p ./reports
           npx @usebruno/cli run ./ \
           --env-var "REQ_URL_FAKE=${REQ_URL_FAKE}" \
-          --reporter-json reports/results.json \
-          --reporter-html reports/Results.html
+          --reporter-json  ../collection/reports/results.json \
+          --reporter-html  ../collection/reports/Results.html
 
       # Upload the test report as an artifact
       - name: Upload Test Report
@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Bruno Test Results
-          path: reports/Results.html
+          path: ./collection/reports/Results.html
 
       # (Optional) Post-run: Summary output
       - name: Display Test Run Summary
