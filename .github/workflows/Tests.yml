@@ -32,7 +32,7 @@ jobs:
           cd collection
           mkdir -p ./collection/reports
           npx @usebruno/cli run ./collection \
-          --env "REQ_URL_FAKE=${REQ_URL_FAKE}" \
+          --env-var "REQ_URL_FAKE=${REQ_URL_FAKE}" \
           --reporter-json ./collection/reports/results.json \
           --reporter-html ./collection/reports/Results.html
 
