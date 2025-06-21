@@ -24,15 +24,18 @@ jobs:
         run: |
           npm install
           
-      - name: Run Bruno with env vars
+      - name: Run Bruno Tests
         env:
-           REQ_URL_HTTPBIN: ${{ secrets.REQ_URL_HTTPBIN }}
-           REQ_URL_FAKE: ${{ secrets.REQ_URL_FAKE }}
-
+          REQ_URL_HTTPBIN: ${{ secrets.REQ_URL_HTTPBIN }}
+          REQ_URL_FAKE: ${{ secrets.REQ_URL_FAKE }}
         run: |
-          cd collection
-          npx bru run --env "REQ_URL_HTTPBIN=${REQ_URL_HTTPBIN}" --env "REQ_URL_FAKE=${REQ_URL_FAKE}" --reporter-json ../collection/reports/results.json --reporter-html ../collection/reports/Results.html
-        
+          mkdir -p ./collection/reports
+          npx @usebruno/cli run ./collection \
+            --env "REQ_URL_HTTPBIN=${REQ_URL_HTTPBIN}" \
+            --env "REQ_URL_FAKE=${REQ_URL_FAKE}" \
+            --reporter-json ./collection/reports/results.json \
+            --reporter-html ./collection/reports/Results.html
+
       # Upload the test report as an artifact
       - name: Upload Test Report
         if: always()
