@@ -1,0 +1,114 @@
+[
+  {
+    "iterationIndex": 0,
+    "summary": {
+      "totalRequests": 4,
+      "passedRequests": 0,
+      "failedRequests": 4,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0
+    },
+    "results": [
+      {
+        "test": {
+          "filename": "Simple_Get_Req.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://{{REQ_URL_FAKE}}/Authors",
+          "headers": {}
+        },
+        "response": {
+          "status": null,
+          "statusText": null,
+          "headers": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "error": "getaddrinfo ENOTFOUND {{req_url_fake}}",
+        "assertionResults": [],
+        "testResults": [],
+        "runtime": 0.034611458,
+        "suitename": "Simple_Get_Req",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "With_Variables_Req.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://{{REQ_URL_FAKE}}/CoverPhotos/books/covers/20",
+          "headers": {}
+        },
+        "response": {
+          "status": null,
+          "statusText": null,
+          "headers": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "error": "getaddrinfo ENOTFOUND {{req_url_fake}}",
+        "assertionResults": [],
+        "testResults": [],
+        "runtime": 0.004403208,
+        "suitename": "With_Variables_Req",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Bearer_Token_Req.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://{{REQ_URL_HTTPBIN}}/bearer",
+          "headers": {
+            "Authorization": "Bearer 12131m4k1n4k12m4"
+          }
+        },
+        "response": {
+          "status": null,
+          "statusText": null,
+          "headers": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "error": "getaddrinfo ENOTFOUND {{req_url_httpbin}}",
+        "assertionResults": [],
+        "testResults": [],
+        "runtime": 5.003743458,
+        "suitename": "Bearer_Token_Req",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Basic_Auth_Req.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://{{REQ_URL_HTTPBIN}}/hidden-basic-auth",
+          "headers": {
+            "Authorization": "Basic YWRtaW46YWRtaW4="
+          }
+        },
+        "response": {
+          "status": null,
+          "statusText": null,
+          "headers": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "error": "getaddrinfo ENOTFOUND {{req_url_httpbin}}",
+        "assertionResults": [],
+        "testResults": [],
+        "runtime": 5.00610375,
+        "suitename": "Basic_Auth_Req",
+        "iterationIndex": 0
+      }
+    ]
+  }
+]

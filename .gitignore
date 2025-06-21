@@ -31,3 +31,4 @@ Thumbs.db
 # OS generated files
 *.~lock
 *.tmp
+*.environments/
